@@ -12,7 +12,7 @@ const handleItemClick=(item)=>{
 
   return (
     <div className='fixed flex justify-center w-screen'>
-        <img className='h-8 w-8 mr-4 mt-2' src="../public/logo.png"></img>
+        <img className='h-8 w-8 mr-4 mt-2' src="logo.png"></img>
         <ul className='flex justify-around list-none '>
         {navItems.map((item,index)=>(
             <li key={index} onClick={()=>handleItemClick(item)}
