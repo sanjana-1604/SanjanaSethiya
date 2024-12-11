@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { motion } from "motion/react"
 
 function Navbar() {
 
@@ -11,7 +12,13 @@ const handleItemClick=(item)=>{
 }
 
   return (
-    <div className='fixed flex justify-center w-screen'>
+    <motion.div  initial={{ y: -100 }} // Start position above the viewport
+    animate={{ y: 0 }} // Animate to its final position
+    transition={{
+      type: "spring", // Smooth bouncing effect
+      stiffness: 50,
+      duration: 0.8,
+    }} className='fixed flex justify-center w-screen'>
         <img className='h-8 w-8 mr-4 mt-2' src="logo.png"></img>
         <ul className='flex justify-around list-none '>
         {navItems.map((item,index)=>(
@@ -23,7 +30,7 @@ const handleItemClick=(item)=>{
 
         ))}
         </ul>
-    </div>
+    </motion.div>
   )
 }
 

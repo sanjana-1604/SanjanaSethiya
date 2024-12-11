@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "PublicSans": ['Public Sans', 'sans-serif']}
+        "PublicSans": ['Public Sans', 'sans-serif'],
+        'Dm-serif': ['"DM Serif Display"', 'serif'],}
       
     },
   },
