@@ -14,7 +14,7 @@ function About() {
         }}
         className="flex items-start justify-center w-[50%] "
       >
-        <img src="./public/sanjana.jpg" />
+        <img src="./sanjana.jpg" />
       </motion.div>
       <motion.div
        initial={{ y: "100vh", x: "-10vw",  }}
