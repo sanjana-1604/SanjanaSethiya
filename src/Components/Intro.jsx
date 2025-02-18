@@ -9,8 +9,8 @@ function Intro() {
 <>
 <div className =" flex flex-col w-screen ">
        
-       <motion.h3 initial={{ y: 120, x:700, opacity:0 }} 
-       animate={{ y: 120, x:150, opacity: 1 }} 
+       <motion.h3 initial={{ y:"20vh", x:"80vw", opacity:0 }} 
+       animate={{ y: "20vh", x:"10vw", opacity: 1 }} 
        transition={{
          stiffness: 50,
          duration: 1.5,
@@ -18,8 +18,8 @@ function Intro() {
          delay: 0.9,   
        }} className=' text-[rgba(234,190,123,1)] text-[20px] font-medium tracking-[0.3rem] '> HELLO WORLD</motion.h3>
       
-       <motion.h1 initial={{ y: 120,x:550, opacity:0}} 
-       animate={{ y: 120, x:150, opacity:1 }} 
+       <motion.h1 initial={{ y: "20vh",x:"80vw", opacity:0}} 
+       animate={{ y: "20vh", x:"10vw", opacity:1 }} 
        transition={{
          stiffness: 50,
          duration: 1.5,
