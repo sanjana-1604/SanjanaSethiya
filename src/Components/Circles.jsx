@@ -1,72 +1,35 @@
-import React from 'react'
-import {motion} from 'motion/react'
+import React from "react";
+import { motion } from "framer-motion";
 
 function Circles() {
+  const sizes = [
+    { w: 280, h: 480, delay: 2 },
+    { w: 220, h: 380, delay: 2.5 },
+    { w: 160, h: 280, delay: 3 },
+    { w: 120, h: 200, delay: 3.5 },
+    { w: 80, h: 140, delay: 4 },
+  ];
+
   return (
-    <div className=' relative w-screen h-screen flex justify-end items-center'>
- <motion.div
-          initial={{y:'0%', opacity: 0.2 }}
-          animate={{y:'0%', opacity:[ 0.2,1,0.2 ] }}
-          transition={{            
-            duration: 0.5,
-            ease: "easeIn",
-            delay:4,
-          }}
-          className="absolute z-20 rounded-l-full w-[350px] h-[650px] p-2 border-l-2 border-t-2 border-b-2 border-[rgba(234,190,123,1)]"
-        >
-        </motion.div>
-
-
+    // hidden on mobile, show flex from sm: up
+    <div className="hidden sm:flex absolute inset-0 justify-end items-center overflow-hidden pointer-events-none">
+      {sizes.map((size, index) => (
         <motion.div
-          initial={{y:'0%', opacity: 0.2 }}
-          animate={{y:'0%', opacity:[ 0.2,1,0.2 ] }}
-          transition={{            
-            duration: 0.5,
-            ease: "easeIn",
-            delay:3.5,
+          key={index}
+          initial={{ opacity: 0.1, x: 40 }}
+          animate={{ opacity: [0.1, 0.6, 0.1], x: 0 }}
+          transition={{ duration: 3, repeat: Infinity, delay: size.delay }}
+          className="absolute right-0 rounded-l-full border-l-2 border-t-2 border-b-2 border-gold"
+          style={{
+            width: `${size.w}px`,
+            height: `${size.h}px`,
+            maxWidth: "100vw",
+            maxHeight: "100vh",
           }}
-          className="absolute z-20 rounded-l-full w-[300px] h-[550px] p-2 border-l-2 border-t-2 border-b-2 border-[rgba(234,190,123,1)]"
-        >
-        </motion.div>
-<motion.div
-          initial={{y:'0%', opacity: 0.2 }}
-          animate={{y:'0%', opacity:[ 0.2,1,0.2 ] }}
-          transition={{            
-            duration: 0.5,
-            ease: "easeIn",
-            delay:3,
-          }}
-          className="absolute z-20 rounded-l-full w-56 h-[450px] p-2 border-l-2 border-t-2 border-b-2 border-[rgba(234,190,123,1)]"
-        >
-        </motion.div>
-
-        <motion.div
-          initial={{y:'0%', opacity: 1 }}
-          animate={{y:'0%', opacity:[ 0.2,1,0.2 ] }}
-          transition={{            
-            duration: 0.5,
-            ease: "easeIn",
-            delay:2.5,
-                  }}
-          className="absolute rounded-l-full w-40 h-80 p-2 border-l-2 border-t-2 border-b-2 border-[rgba(234,190,123,1)]"
-        >
-        </motion.div>
-
-<motion.div
-          initial={{y:'0%', opacity: 1 }}
-          animate={{y:'0%', opacity:[ 0.2,1,0.2 ]}}
-          transition={{            
-            duration: 0.5,
-            ease: "easeIn",
-            delay:2,
-          }}
-          className="absolute z-10 rounded-l-full w-20 h-40 p-2 border-l-2 border-t-2 border-b-2 border-[rgba(234,190,123,1)]"
-        >
-        </motion.div>
-       
-        
+        />
+      ))}
     </div>
-  )
+  );
 }
 
-export default Circles
+export default Circles;

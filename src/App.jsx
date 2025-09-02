@@ -1,34 +1,31 @@
-import { useState } from 'react'
- import {BrowserRouter, Routes,Route} from 'react-router-dom'
-import Navbar from './Components/Navbar'
-import Intro from './Components/Intro'
-import About from './Components/About'
-import Work from './Components/Work'
-import SayHello from './Components/SayHello'
-import { AnimatePresence, motion } from 'motion/react'
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar.jsx";
+import Intro from "./Components/Intro.jsx";
+import About from "./Components/About.jsx";
+import Work from "./Components/Work.jsx";
+import SayHello from "./Components/SayHello.jsx";
+import "./index.css";
 
 
-function App() {
- 
+export default function App() {
+return (
+<div className="min-h-screen bg-black text-white font-public">
+<Navbar />
 
-  return (
-    <>
-    <BrowserRouter>
-    <div className='bg-black w-screen h-screen flex '>
-        
-        <Navbar></Navbar> 
-       
-        <Routes>
-          <Route path='/' element={<Intro/>}></Route>
-          <Route path='/about' element = {<About/>}/>
-          <Route path='/work' element = {<Work/>}/>
-          <Route path='/sayhello' element = {<SayHello/>}/>
-          </Routes> 
-          </div>         
-    </BrowserRouter>
-      
-    </>
-  )
+<main className="pt-16"> {/* mobile-first fixed nav height */}
+<Routes>
+<Route index element={<Intro />} />
+<Route path="about" element={<About />} />
+<Route path="work" element={<Work />} />
+<Route path="say-hello" element={<SayHello />} />
+</Routes>
+</main>
+<footer className="container section text-gray-400 text-sm">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 grid-divider pt-6">
+<p>© {new Date().getFullYear()} Sanjana • Built with React & Tailwind</p>
+
+</div>
+</footer>
+</div>
+);
 }
-
-export default App

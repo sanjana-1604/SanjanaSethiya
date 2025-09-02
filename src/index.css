@@ -2,3 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Smooth scroll and focus outlines */
+html:focus-within { scroll-behavior: smooth; }
+:target { scroll-margin-top: 5rem; }
+
+
+/***** Mobile-first helpers *****/
+.container { @apply mx-auto px-4; }
+.section { @apply py-12 sm:py-16; }
+.h1 { @apply text-4xl sm:text-6xl lg:text-7xl font-extrabold font-dm tracking-tight; }
+.h2 { @apply text-2xl sm:text-3xl lg:text-4xl font-dm; }
+.h3 { @apply text-base sm:text-lg tracking-widest text-gold font-semibold; }
+.copy { @apply text-base sm:text-lg leading-relaxed text-gray-300 font-public; }
+
+
+/***** Luther-ish vibe *****/
+.grid-divider { @apply border-t border-neutral-800; }
+
+
+/* Menu overlay */
+.mobile-dim { background: rgba(0,0,0,.6); }
+
+html, body {
+  overflow-x: hidden;  /* prevent horizontal scrollbar */
+}
+
+section {
+  overflow-x: clip;    /* clip overflowing half-circles */
+}
