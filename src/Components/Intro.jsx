@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Circles from "Circles.jsx";
+import Circles from "../Components/Circles.jsx";
 
 export default function Intro() {
   return (
