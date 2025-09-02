@@ -20,15 +20,15 @@ export default function SayHello() {
 
     emailjs
       .send(
-        "YOUR_SERVICE_ID",   // 🔑 replace with EmailJS service ID
-        "YOUR_TEMPLATE_ID",  // 🔑 replace with EmailJS template ID
-        {
-          from_name: form.name,
-          from_email: form.email,
-          message: form.message,
-        },
-        "AVHF7EhBGOInzSeEJ"   
-      )
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  {
+    from_name: form.name,
+    from_email: form.email,
+    message: form.message,
+  },
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+)
       .then(
         () => {
           setStatus("Message sent successfully ✅");
