@@ -24,7 +24,7 @@ const projects = [
     summary: "Application has some js based question to answer",
     tech: ["Java Script"],
     image: "/JS-question-app.png",
-    link: "https://javajcript-quiz-git-main-sanjana1604s-projects.vercel.app/"
+    link: "https://javajcript-quiz.vercel.app/"
   },
 
 ]
