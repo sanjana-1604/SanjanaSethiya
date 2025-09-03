@@ -25,7 +25,7 @@ const projects = [
     summary: "Application has some basic projects covering major react concepts",
     tech: ["React", "JS", "HTML"],
     image: "/react-projects.png",
-    link: "https://25-reactjs-projects.vercel.app/"
+    link: "https://25-reactjsprojects.vercel.app/"
   },
     {
     name: "Doc-Mini-App",
