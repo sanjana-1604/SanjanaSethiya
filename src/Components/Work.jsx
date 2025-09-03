@@ -15,7 +15,7 @@ const projects = [
     summary: "This application can be used to check weather of any city on current day and the next 5 days. It will be helpful in planning any outdoor trip.",
     tech: ["jquery", "Bootstrap", "LocalStorage"],
     image: "/Weather-App.png",
-    link: "https://weatherapp-qqj6ljzgn-sanjana1604s-projects.vercel.app/"
+    link: "https://weatherapp-blond-kappa.vercel.app/"
   },
 
 {
