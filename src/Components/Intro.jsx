@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Circles from "./Circles";
+import Circles from "../Components/Circles.jsx";
 
 export default function Intro() {
   const scrollToSection = (id) => {
