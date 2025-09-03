@@ -1,14 +1,7 @@
 import { motion } from "framer-motion";
 
 const projects = [
-  {
-    name: "Doc-Mini-App",
-    detail: "React + Vite application",
-    summary: "A lightweight document editor with real-time preview and export options.",
-    tech: ["React", "Vite", "Tailwind"],
-    image: "/Doc-Mini-App.png",
-    link: "https://doc-mini-app-psi.vercel.app/"
-  },
+
   {
     name: "Weather-App",
     detail: "jquery + Bootstrap application",
@@ -25,6 +18,22 @@ const projects = [
     tech: ["Java Script"],
     image: "/JS-question-app.png",
     link: "https://javajcript-quiz.vercel.app/"
+  },
+  {
+    name: "React basic projects",
+    detail: "React basic projects to cover the concepts",
+    summary: "Application has some basic projects covering major react concepts",
+    tech: ["React", "JS", "HTML"],
+    image: "/react-projects.png",
+    link: "https://25-reactjs-projects.vercel.app/"
+  },
+    {
+    name: "Doc-Mini-App",
+    detail: "React + Vite application",
+    summary: "A lightweight document editor with real-time preview and export options.",
+    tech: ["React", "Vite", "Tailwind"],
+    image: "/Doc-Mini-App.png",
+    link: "https://doc-mini-app-psi.vercel.app/"
   },
 
 ]
