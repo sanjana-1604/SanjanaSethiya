@@ -32,7 +32,7 @@ const projects = [
 
 export default function Work() {
   return (
-    <section className="section container">
+    <section id="work" className="section container">
       <motion.h3
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}

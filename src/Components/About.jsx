@@ -12,7 +12,7 @@ export default function About() {
   };
 
   return (
-    <section className="container section grid gap-10 sm:gap-16 sm:grid-cols-2 items-center">
+    <section id="about" className="container section grid gap-10 sm:gap-16 sm:grid-cols-2 items-center">
       {/* Larger circular image on the left */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}

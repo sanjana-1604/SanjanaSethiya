@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
-import Circles from "Circles.jsx";
+import Circles from "./Circles";
 
 export default function Intro() {
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-center gap-6 overflow-hidden">
+    <section id="intro" className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-center gap-6">
       {/* Circles background */}
-      <Circles />
+      
+        <Circles />
+     
 
       <div className="container relative z-10">
         <motion.p
@@ -41,8 +47,21 @@ export default function Intro() {
           transition={{ delay: 0.5 }}
           className="flex flex-wrap gap-3 pt-2"
         >
-          <a href="/work" className="px-5 py-3 rounded-xl bg-gold text-black font-semibold">View Work</a>
-          <a href="/say-hello" className="px-5 py-3 rounded-xl border border-neutral-700">Say Hello</a>
+          <div className="mt-8 flex gap-4">
+            <button
+              onClick={() => scrollToSection("work")}
+              className="px-6 py-3 rounded-xl bg-gold text-black font-semibold shadow-md hover:shadow-lg transition"
+            >
+              View Work
+            </button>
+
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="px-6 py-3 rounded-xl border border-gold text-gold font-semibold shadow-md hover:shadow-lg transition"
+            >
+              Say Hello
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>

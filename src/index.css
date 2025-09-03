@@ -31,3 +31,6 @@ html, body {
 section {
   overflow-x: clip;    /* clip overflowing half-circles */
 }
+html {
+  scroll-behavior: smooth;
+}

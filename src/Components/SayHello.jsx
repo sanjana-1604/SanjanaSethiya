@@ -46,7 +46,7 @@ export default function SayHello() {
   };
 
   return (
-    <section className="container section">
+    <section id="contact" className="container section">
       <motion.h3
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}

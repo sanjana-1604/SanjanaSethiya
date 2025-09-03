@@ -1,31 +1,26 @@
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar.jsx";
-import Intro from "./Components/Intro.jsx";
-import About from "./Components/About.jsx";
-import Work from "./Components/Work.jsx";
-import SayHello from "./Components/SayHello.jsx";
-import "./index.css";
-
+import Navbar from "./Components/Navbar";
+import Intro from "./Components/Intro";
+import About from "./Components/About";
+import Work from "./Components/Work";
+import SayHello from "./Components/SayHello";
 
 export default function App() {
-return (
-<div className="min-h-screen bg-black text-white font-public">
-<Navbar />
+  return (
+    <div className="min-h-screen bg-black text-white font-public">
+      {/* Navbar fixed at top */}
+      <Navbar />
 
-<main className="pt-16"> {/* mobile-first fixed nav height */}
-<Routes>
-<Route index element={<Intro />} />
-<Route path="about" element={<About />} />
-<Route path="work" element={<Work />} />
-<Route path="say-hello" element={<SayHello />} />
-</Routes>
-</main>
-<footer className="container section text-gray-400 text-sm">
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 grid-divider pt-6">
-<p>© {new Date().getFullYear()} Sanjana • Built with React & Tailwind</p>
+      {/* All sections on one page */}
+      <main className="pt-16">
+        <Intro />
+        <About />
+        <Work />
+        <SayHello />
+      </main>
 
-</div>
-</footer>
-</div>
-);
+      <footer className="text-center py-6 text-sm text-gray-400 border-t border-neutral-800">
+        © {new Date().getFullYear()} Sanjana Sethiya. All rights reserved.
+      </footer>
+    </div>
+  );
 }
