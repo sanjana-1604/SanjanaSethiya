@@ -12,7 +12,7 @@ export default function SayHello() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
   e.preventDefault();
 
   const formData = {
@@ -28,18 +28,21 @@ export default function SayHello() {
       body: JSON.stringify(formData),
     });
 
+    const data = await res.json().catch(() => ({})); // safeguard
+
     if (res.ok) {
-      alert("Message sent successfully ✅");
+      alert("✅ " + (data.message || "Message sent!"));
       e.target.reset();
     } else {
-      const err = await res.json();
-      alert("Something went wrong ❌ " + err.message);
+      alert("❌ " + (data.error || data.message || "Failed to send"));
     }
   } catch (err) {
-    console.error(err);
-    alert("Failed to send message ❌");
+    console.error("Fetch error:", err);
+    alert("❌ Network error: " + err.message);
   }
 };
+
+
 
   return (
     <section id="contact" className="container section">
