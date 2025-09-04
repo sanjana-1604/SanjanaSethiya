@@ -12,38 +12,34 @@ export default function SayHello() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
-    setSuccess(false);
-    setErrorShake(false);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  {
-    from_name: form.name,
-    from_email: form.email,
-    message: form.message,
-  },
-  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-)
-      .then(
-        () => {
-          setStatus("Message sent successfully ✅");
-          setForm({ name: "", email: "", message: "" });
-          setSuccess(true);
-          setTimeout(() => setSuccess(false), 4000);
-        },
-        (error) => {
-          console.error(error);
-          setStatus("Something went wrong ❌");
-          setErrorShake(true);
-          setTimeout(() => setErrorShake(false), 800); 
-        }
-      );
+  const formData = {
+    name: e.target.name.value,
+    email: e.target.email.value,
+    message: e.target.message.value,
   };
+
+  try {
+    const res = await fetch("/api/sendEmail", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      alert("Message sent successfully ✅");
+      e.target.reset();
+    } else {
+      const err = await res.json();
+      alert("Something went wrong ❌ " + err.message);
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Failed to send message ❌");
+  }
+};
 
   return (
     <section id="contact" className="container section">
